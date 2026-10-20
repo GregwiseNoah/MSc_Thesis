@@ -9,44 +9,10 @@ import cmasher as cmr
 BoxSize = 3977.88
 cmap = cmr.sunburst
 time_conversion_factor = 3.08568e21 / 100000 * u.s
-# path_j46t12_8  = '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/1e46_12.8Myr/output_M13j45t128'
-'''finished:
-paths = ['/lustre/ageorge/Thesis/Simulations/mhalo_1e13/01_1e45_128Myr/output_M13j45t128/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/01_cool_j45_t250/output_01_radcool_j250/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/1e45_128Myr/output_M13j45t128/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/1e46_12.8Myr/output_M13j45t128/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/cool_j45_t250/output_radcool_j250/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/j44t300/output_M13j45t128/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/j45_t25/output_M13j46t25/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/j46_t25/output_M13j46t25/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/cool_j46_t12.8/output_radcool_j46_t400/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Nojet/output_M13j45t128/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Jet_density_tests/light_jet/output_M13j45t128/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Jet_density_tests/heavy_jet/output_M13j45t128/',
-        '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Gas_fraction_tests/low_gas_jet/output_M13j45t128',
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Jet_density_tests/light_jet/output_M13j45t128/',
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Jet_density_tests/heavy_jet/output_M13j45t128/'
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Self_regulated_test/arepo_rainer/output_self_regulated'
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Jet_density_tests/heavy_jet/output_M13j45t128/',
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Jet_density_tests/light_jet_MHD/output_M13j45t128',
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Self_regulated_runs/low_gas_jet/output_self',
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Self_regulated_runs/Dense_jet/output_densejet',
-         '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/cool_j43_t1000/output_longjet'
 
-          ]
-'''
-
-paths = [
-
-    '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Gas_fraction_tests/low_gas_jet/output_M13j45t128/'
-         
-        #  '/lustre/ageorge/Thesis/Simulations/mhalo_1e13/Self_regulated_runs/Fid_self_regulated/output_self_regulated'
-
+paths = [ # Adds paths here
+        
         ]
-
-
-
-# sim_files = sorted(glob.glob(path_j46t12_8 + '*.hdf5'))
 
 def get_slice(ax, cax, VoronoiPos, Field, x_min, x_max, y_min, y_max, z_slice, vmin, vmax, Nplot, log = False):
     from scipy import spatial  # needed for KDTree that we use for nearest neighbour search and Voronoi mesh
@@ -113,17 +79,6 @@ def plot_slice(directory, snapshot, property, vmin, vmax, center, extent, Nplot 
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(y_min, y_max)
 
-    # save_plot_dir = os.path.join(directory, plot_directory)
-    # if not os.path.exists(save_plot_dir):
-    #     os.mkdir(save_plot_dir)
-
-    # print(
-    #     os.path.join(save_plot_dir,
-    #                     f'{property}_%03d.png' % snapshot))
-    # fig.savefig(os.path.join(save_plot_dir,
-    #                             f'{property}_%03d.png' % snapshot),
-    #             dpi=300)
-
     if not os.path.exists(plot_directory):
         os.mkdir(plot_directory)
 
@@ -153,5 +108,3 @@ if __name__ == '__main__':
                 print(f'Skipping: {path} snapshot {snapshot_number} not found')
             except Exception as e:
                 print(f'Error processing {path} snapshot {snapshot_number}: {e}')
-    # plot_slice(path_j46t12_8, 62, 'Density', vmin = 1e-30, vmax= 1e-25, center = center, extent = extent, log = True, conversion_factor = unit_density, conversion_factor_length = unit_length )
-    # plot_multiple_slices([path_j46t12_8], 32, ['Density', 'Jet_Tracer'], vmins = [1e-30, 1e-8], vmaxs= [1e-25, 1e-2], center = center, extent = extent, logs = [True, True], conversion_factors = [unit_density, 1], conversion_factor_length = unit_length )
