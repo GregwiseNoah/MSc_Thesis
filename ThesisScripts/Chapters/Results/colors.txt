@@ -1,0 +1,19 @@
+
+
+
+jet morphology:
+colors = ['#AA5245', '#DAA639', '#6C6CA2' ]
+
+self_3jet
+colors = ["#5b5f97","#360a14","#ff6b6c"]
+fid = "#5b5f97"
+heavy = "#360a14"
+low gas mass = "#ff6b6c"
+
+long run vs fid self
+colors = ['#2D728F', '#AB3428']
+
+clusters vs groups
+colors = ['#E84855', '#B56B45', '#2B3A67']
+
+

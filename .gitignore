@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+# That's a lot for just a template
+
+*.hdf5
+Plots/
+logs/
+slices_*/
+vel_slices_*/
+slurm-*.out
