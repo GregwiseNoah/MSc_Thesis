@@ -226,6 +226,5 @@ __marimo__/
 *.hdf5
 Plots/
 logs/
-slices_*/
 vel_slices_*/
 slurm-*.out
